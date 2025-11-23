@@ -35,14 +35,16 @@
 
 }
 
-button {
+/* ////////////!!!!!!!!!!!!!!! */
+
+/* button {
     border: transparent;
   border-radius: 10px;
   color: white;
   font-weight: 700;
   padding: 5px 8px;
   cursor: pointer;
-}
+} */
 
 .active{
   background-color:#7950f2;
