@@ -1,0 +1,21 @@
+.accordianitems {
+  border: 2px solid black;
+  width: 70%;
+  margin: 20px auto;
+  height: 50px;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.open {
+  height: 150px;
+  border-top: 3px solid red;
+}
+.open .number,
+.open .icon,
+.open .question {
+  color: red;
+}

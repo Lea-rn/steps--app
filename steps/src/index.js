@@ -2,13 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Counterchallange from './Counterchallange';
+import Secondapp from './AppV1';
+import Accordian from './Accordian';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Counterchallange/>
+{/* <App/> */}
+{/* <Secondapp/> */}
+<Accordian/>
   </React.StrictMode>
 );
 
