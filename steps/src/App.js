@@ -8,18 +8,16 @@ const messages = [
 
 function App() {
   let [step, setStep] = useState(1);
-  const [isOpen, setIsOpen] = useState(true);   //// 
+  const [isOpen, setIsOpen] = useState(true); ////
 
   function handlePrevious() {
-    if (step > 1) setStep((current)=> current - 1);
+    if (step > 1) setStep((current) => current - 1);
   }
 
   function handleNext() {
     if (step < 3) {
-     setStep((current)=> current + 1)
-
+      setStep((current) => current + 1);
     }
-   
 
     ///// bad practice :::
     // test.name = "mohamed"
@@ -28,8 +26,9 @@ function App() {
 
   return (
     <div className="app-container">
-      
-      <button onClick={()=> setIsOpen((is)=> !is )} className="btn-close">&times;</button>
+      <button onClick={() => setIsOpen((is) => !is)} className="btn-close">
+        &times;
+      </button>
       {/* {isOpen ?  <button onClick={()=> setIsOpen(false)} className="btn-close">&times;</button> : 
       <button onClick={()=> setIsOpen(true)} className="btn-close">open</button> 
       } */}
@@ -43,31 +42,25 @@ function App() {
           </div>
 
           <p className="message">
-            step {step} : {messages[step - 1]}
+            <StepMessage step={step}>{messages[step - 1]}</StepMessage>
           </p>
 
           <div className="buttons">
-            <button
-              style={{
-                backgroundColor: "rgba(121, 80, 242, 1)",
-                color: "#fff",
-              }}
-              // onClick={() => alert("Previous")}
-              // onClick={function(){return alert("previous")}}
-              // onMouseEnter={()=> console.log("enter")}
-              // onMouseLeave={()=> console.log("leave") }
+            <Button
+              textColor="#fff"
+              bgColor="rgba(121, 80, 242, 1)"
               onClick={handlePrevious}
             >
-              Previous
-            </button>
+              👈 previous
+            </Button>
 
-            <button
-              style={{ backgroundColor: "#7950f2", color: "#fff" }}
-              // onClick={() => alert("next")}
+            <Button
+              textColor="#fff"
+              bgColor="rgba(121, 80, 242, 1)"
               onClick={handleNext}
             >
-              next
-            </button>
+              next 👉
+            </Button>
           </div>
         </div>
       )}
@@ -76,3 +69,25 @@ function App() {
 }
 
 export default App;
+
+function StepMessage({ step, children }) {
+  return (
+    <p className="message">
+      Step {step} : {children}
+    </p>
+  );
+}
+
+function Button({ textColor, bgColor, onClick, children }) {
+  return (
+    <button
+      style={{
+        backgroundColor: bgColor,
+        color: textColor,
+      }}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+}
